@@ -1,0 +1,7 @@
+
+es:
+    elasticSearchHost: localhost
+    elasticSearchPort: 9200
+spring:
+    application:
+        name: elasticsearch

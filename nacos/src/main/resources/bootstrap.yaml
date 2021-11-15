@@ -1,0 +1,12 @@
+spring:
+    cloud:
+        nacos:
+            config:
+                cluster-name: CS
+                server-addr: localhost:8848
+                file-extension: yaml
+    profiles:
+        active: dev
+    application:
+        name: nacosService
+useLocalCache: false

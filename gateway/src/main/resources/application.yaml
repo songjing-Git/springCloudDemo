@@ -1,0 +1,27 @@
+server:
+    port: 8087
+spring:
+    application:
+        name: userService
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        name: defaultDataSource
+        url: jdbc:mysql://localhost:3306/oa?serverTimezone=UTC
+        username: root
+        password: root
+    cloud:
+        nacos:
+            discovery:
+                cluster-name: CS
+                server-addr: localhost:8848
+        gateway:
+            discovery:
+                locator:
+                    enabled: true
+            routes:
+                - id: userservice
+                  uri: lb://userService
+                  predicates:
+                      - Path=/o/**
+                  filters:
+                      - AddRequestParameter=red, blue

@@ -1,0 +1,23 @@
+
+spring:
+    application:
+        name: feign-api
+    cloud:
+      nacos:
+          discovery:
+              server-addr: localhost:8848
+              cluster-name: CS
+
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        name: defaultDataSource
+        url: jdbc:mysql://localhost:3306/oa?serverTimezone=UTC
+        username: root
+        password: root
+feign:
+    client:
+        config:
+            default:
+                loggerLevel: full
+server:
+    port: 8002
